@@ -7,7 +7,11 @@
 
 ## Project Setup
 
-`git init`
+git init
+touch .gitignore
+Add *.class to the .gitignore
+git add.
+git commit-m "Initial Commit"
 
 ## 3 Step Repeating Commit Process
 1. Make changes to code
