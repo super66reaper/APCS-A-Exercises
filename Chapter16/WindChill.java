@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
-
 import java.lang.Math;
 
 public class WindChill {
@@ -10,7 +7,7 @@ public class WindChill {
         int windSpeed;
         int temp;
 
-        int windChill;
+        double windChill;
 
         System.out.print("Wind Speed: ");
         windSpeed = scan.nextInt();
@@ -21,7 +18,8 @@ public class WindChill {
             windChill = temp;
         }
         else {
-            windChill = 35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16);
+            double v = Math.pow(windSpeed, 0.16);
+            windChill = 35.74 + 0.6215 * temp - 35.75 * v + 0.4275 * temp * v;
         }
         System.out.println("Wind Chill: " + windChill);
     }
