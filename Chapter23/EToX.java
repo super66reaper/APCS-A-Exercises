@@ -5,8 +5,8 @@ public class EToX {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int x;
-        int n = 0;
-        int nNot = 0;
+        double n = 0;
+        double nNot = 0;
         double term = 1;
         double sum = 1;
 
@@ -27,7 +27,7 @@ public class EToX {
 
             System.out.println("n:" + n + "    term: " + term + "       sum: " + sum);
         }
-        System.out.println("my   e^x: " + sum);
+        System.out.println("\nmy   e^x: " + sum);
         System.out.println("real e^x: " + Math.exp(x));
     }
 }
