@@ -13,7 +13,6 @@ public class SumOfDivisors {
         for (i = 1; i < n; i++) {
             if (n % i == 0) {
                 sum += i;
-                System.out.println(i);
             }
         }
         System.out.println("The sum of the divisors is: " + sum);
