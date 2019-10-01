@@ -10,9 +10,12 @@ public class SquareRootGame {
         String firstPlayerName;
         String secondPlayerName;
 
-        System.out.println("How many rounds? ");
+        System.out.print("How many rounds? ");
+        //Had to do scan.nextline() because it messes up with next line after the next int
         rounds = scan.nextInt();
-        System.out.println("First Player, sign in---> ");
+        scan.nextLine();
+
+        System.out.print("First Player, sign in--> ");
         firstPlayerName = scan.nextLine();
 
         System.out.print("Second Player, sign in--> ");
@@ -53,7 +56,7 @@ public class SquareRootGame {
             }
         }
 
-        System.out.println("---- Final Score ----");
+        System.out.println("\n---- Final Score ----");
         System.out.println(firstPlayerName + ": " + firstPlayerWins + "   " + secondPlayerName + ": " + secondPlayerWins);
     }
 }
