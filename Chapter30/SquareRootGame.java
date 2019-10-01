@@ -30,13 +30,23 @@ public class SquareRootGame {
         double secondPlayerDif = 0;
         int firstPlayerWins = 0;
         int secondPlayerWins = 0;
+        boolean turnSwitch = true;
         for (i = 0; i < rounds; i++) {
             squareRootNum = rand.nextDouble() * 100;
             System.out.println("\nWhat is the square root of " + squareRootNum);
-            System.out.print(firstPlayerName + ", what is your guess: ");
-            firstPlayerGuess = scan.nextDouble();
-            System.out.print(secondPlayerName + ", what is your guess: ");
-            secondPlayerGuess = scan.nextDouble();
+            if (turnSwitch) {
+                System.out.print(firstPlayerName + ", what is your guess: ");
+                firstPlayerGuess = scan.nextDouble();
+                System.out.print(secondPlayerName + ", what is your guess: ");
+                secondPlayerGuess = scan.nextDouble();
+                turnSwitch = false;
+            }else {
+                System.out.print(secondPlayerName + ", what is your guess: ");
+                secondPlayerGuess = scan.nextDouble();
+                System.out.print(firstPlayerName + ", what is your guess: ");
+                firstPlayerGuess = scan.nextDouble();
+                turnSwitch = true;
+            }
 
             correctSquareRoot = Math.sqrt(squareRootNum);
             System.out.println("The correct square root is: " + correctSquareRoot);
