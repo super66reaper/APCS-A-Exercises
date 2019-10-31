@@ -3,10 +3,10 @@ public class Box {
     private double height;
     private double width;
 
-    public Box(double length, double height, double width) {
+    public Box(double width, double height, double length) {
+        setWidth(width);
         setHeight(height);
         setLength(length);
-        setWidth(width);
     }
 
     public void setLength(double length) {
@@ -31,5 +31,13 @@ public class Box {
 
     public double getWidth() {
         return this.width;
+    }
+
+    public double volume() {
+        return width * height * length;
+    }
+
+    public double area() {
+        return (2 * (height * width)) + (2 * (height * length)) + (2 * (width * length));
     }
 }
