@@ -9,6 +9,12 @@ public class Box {
         setLength(length);
     }
 
+    public Box(Box oldBox) {
+        width = oldBox.getWidth();
+        height = oldBox.getHeight();
+        length = oldBox.getLength();
+    }
+
     public void setLength(double length) {
         this.length = length;
     }
