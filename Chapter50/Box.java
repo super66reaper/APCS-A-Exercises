@@ -9,10 +9,32 @@ public class Box {
         setLength(length);
     }
 
-    public Box(Box oldBox) {
-        width = oldBox.getWidth();
-        height = oldBox.getHeight();
-        length = oldBox.getLength();
+    public Box(Box oldBox, String change) {
+        if(change.equals("bigger")) {
+            width = biggerBox(oldBox).width;
+            height = biggerBox(oldBox).height;
+            length = biggerBox(oldBox).length;
+        }else {
+            width = smallerBox(oldBox).width;
+            height = smallerBox(oldBox).height;
+            length = smallerBox(oldBox).length;
+        }
+    }
+
+    public Box biggerBox(Box oldBox) {
+        return new Box(1.25 * oldBox.getWidth(), 1.25 * oldBox.getHeight(), 1.25 * oldBox.getLength());
+    }
+
+    public Box smallerBox(Box oldBox) {
+        return new Box(.75 * oldBox.getWidth(), .75 * oldBox.getHeight(), .75 * oldBox.getLength());
+    }
+
+    public boolean nests(Box outsideBox) {
+        if(outsideBox.width > width && outsideBox.height > height && outsideBox.length > length) {
+            return true; 
+        }else {
+            return false;
+        }
     }
 
     public void setLength(double length) {
