@@ -11,22 +11,14 @@ public class Box {
 
     public Box(Box oldBox, String change) {
         if(change.equals("bigger")) {
-            width = biggerBox(oldBox).width;
-            height = biggerBox(oldBox).height;
-            length = biggerBox(oldBox).length;
+            width = oldBox.getWidth() * 1.25;
+            height = oldBox.getHeight() * 1.25;
+            length = oldBox.getLength() * 1.25;
         }else {
-            width = smallerBox(oldBox).width;
-            height = smallerBox(oldBox).height;
-            length = smallerBox(oldBox).length;
+            width = oldBox.getWidth() * .75;
+            height = oldBox.getHeight() * .75;
+            length = oldBox.getLength() * .75;
         }
-    }
-
-    public Box biggerBox(Box oldBox) {
-        return new Box(1.25 * oldBox.getWidth(), 1.25 * oldBox.getHeight(), 1.25 * oldBox.getLength());
-    }
-
-    public Box smallerBox(Box oldBox) {
-        return new Box(.75 * oldBox.getWidth(), .75 * oldBox.getHeight(), .75 * oldBox.getLength());
     }
 
     public boolean nests(Box outsideBox) {
