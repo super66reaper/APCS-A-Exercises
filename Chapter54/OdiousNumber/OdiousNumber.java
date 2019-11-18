@@ -15,7 +15,7 @@ public class OdiousNumber {
 
             numChecker.checkNum(num);
             if (num == Math.abs(num)) {
-                System.out.println("\nThis number is " + numChecker.getNumType());
+                System.out.println("\nThis number is " + numChecker.getNumType() + " for being odious");
             }
         }
         System.exit(0);
