@@ -28,11 +28,11 @@ public class OdiousNumberChecker {
         }
 
         int numOfIs = 0;
-        for (int i = binaryOfNum.length(); i == 0; i--) {
-            if(binaryOfNum.getChar(i) == "1");
-            numOfIs += 1;
+        for (int i = 0; i < binaryOfNum.length(); i++) {
+            if(binaryOfNum.charAt(i) == '1') {
+                numOfIs++;
+            }
         }
-        System.out.println(numOfIs + " " + binaryOfNum);
         if (numOfIs % 2 == 0) {
             return "false";
         }else {
